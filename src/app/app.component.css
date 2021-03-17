@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  /* Create four equal columns */
+  .column {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* On screens that are 992px wide or less, go from four columns to two columns */
+  @media screen and (max-width: 992px) {
+    .column {
+      display: flex;
+      flex: 25%;
+      flex-direction: row;
+    }
+  }
+  
+  /* make the columns stack*/
+  @media screen and (max-width: 600px) {
+    .row {
+      flex-direction: column;
+    }
+  }

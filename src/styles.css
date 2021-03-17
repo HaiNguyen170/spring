@@ -71,6 +71,7 @@
  .nav-item{
    cursor: pointer;
  }
+ 
  /*-- //navbar --*/ 
 
  /*-- nav --*/ 
@@ -426,14 +427,40 @@ a.move-top span{
  .text-secondary {
    color: #ecb807 !important;
  }
-
  /*-- //details --*/ 
- 
-.dragNDrop{
-  
+
+
+ /*-- sumbit --*/ 
+.dragNDrop .div1{
+  width: 100% !important;
 }
 
+.afu-select-btn{
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.afu-reset-btn{
+  margin: 0 15px 7px 5px;
+  padding: 5px;
+}
+/*-- //sumbit --*/ 
+
 /*-- media --*/ 
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)  {
+
+    .menu-toggle{
+      visibility: hidden;
+    }
+
+    body{
+      width: 112%;
+    }
+}
+
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
