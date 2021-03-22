@@ -4,24 +4,43 @@
     flex-wrap: wrap;
   }
   
-  /* Create four equal columns */
   .column {
     display: flex;
     flex-direction: row;
+    width: 350px;
+  }
+
+  .pr-1{
+    padding-right: 0 !important;
   }
   
-  /* On screens that are 992px wide or less, go from four columns to two columns */
-  @media screen and (max-width: 992px) {
+  .pl-1{
+    padding-left: 0 !important;
+  }
+
+  @media screen and (max-width: 2500px) {
     .column {
       display: flex;
       flex: 25%;
       flex-direction: row;
+      padding: 0;
     }
   }
   
   /* make the columns stack*/
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 745px) {
     .row {
       flex-direction: column;
+      margin: auto;
+    }
+
+    .pr-1{
+      padding-left: 10px !important;
+    }
+  }
+
+  @media screen and (max-width: 420px){
+    .pr-1{
+      padding-left: 8px !important;
     }
   }

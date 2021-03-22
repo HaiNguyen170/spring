@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MagTableComponent } from './mag-table/mag-table.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { SubmitComponent } from './submit/submit.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'Error', component: ErrorComponent},  
   {path:'Table', component: DataTableComponent}, 
   {path:'Mag-Table', component: MagTableComponent}, 
+  {path: 'Register', component: RegisterComponent }
 ];
 
 @NgModule({

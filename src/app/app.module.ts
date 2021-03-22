@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,9 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MagTableComponent } from './mag-table/mag-table.component';
 import { ChartsModule } from 'ng2-charts';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { ChartsModule } from 'ng2-charts';
     ErrorComponent,
     DataTableComponent,
     MagTableComponent,
+    RegisterComponent,
+    ProfileComponent
   ], 
   imports: [
     BrowserModule,
@@ -39,9 +45,10 @@ import { ChartsModule } from 'ng2-charts';
     MatPaginatorModule,
     MatSortModule,
     BrowserAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,7 +34,7 @@
    height: auto;
    padding-top: 8rem;
    padding-bottom: 8rem;
-   background: linear-gradient(90deg, rgba(7, 5, 5, 0.411) 0%, rgba(22, 22, 22, 0.281) 100%), url("./assets/img/bg-masthead.jpg");
+   background: linear-gradient(90deg, rgba(7, 5, 5, 0.411) 0%, rgba(22, 22, 22, 0.281) 100%), url("./assets/img/bg-masthead2.jpg");
    background-position: center center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -449,7 +449,7 @@ a.move-top span{
 /*-- media --*/ 
 @media only screen 
 and (min-device-width: 320px) 
-and (max-device-width: 568px)
+and (max-device-width: 683px)
 and (-webkit-min-device-pixel-ratio: 2)  {
 
     .menu-toggle{

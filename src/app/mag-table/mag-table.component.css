@@ -1,8 +1,17 @@
 .full-width-table {
-  width: 80%;
-}
-
-.center {
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
+
+.mat-elevation-z8{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35) !important;
+} 
+
