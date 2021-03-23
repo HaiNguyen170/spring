@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
-  username?: string;
+  email?: string;
 
   constructor(private router:Router, private tokenStorageService: TokenStorageService){}
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
-      this.username = user.username;
+      this.email = user.email;
     }
   }
   

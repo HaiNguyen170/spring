@@ -9,17 +9,17 @@
                      <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
                         novalidate>
                         <div class="form-label-group">
-                           <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username"
-                              [(ngModel)]="form.username" #username="ngModel" required autofocus>
+                           <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email"
+                              [(ngModel)]="form.email" #email="ngModel" required autofocus>
                         </div>
-                        <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
-                           Username is required!
+                        <div class="alert alert-danger" role="alert" *ngIf="email?.errors && f.submitted">
+                           Email is required!
                         </div>
 
                         <div class="form-label-group">
                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
                               name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
-                           <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                           <div class="alert alert-danger" role="alert" *ngIf="password?.errors && f.submitted">
                               <div *ngIf="password.errors.required">Password is required</div>
                               <div *ngIf="password.errors.minlength">
                                  Password must be at least 6 characters
