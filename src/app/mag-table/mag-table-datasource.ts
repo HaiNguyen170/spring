@@ -13,30 +13,31 @@ export interface MagTableItem {
   created_date:string;
   expired_date:string;
   file:string;
+  review:string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: MagTableItem[] = [
-  {id: 1, title: 'Hydrogen', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 2, title: 'Helium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 3, title: 'Lithium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 4, title: 'Beryllium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 5, title: 'Boron', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 6, title: 'Carbon', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 7, title: 'Nitrogen', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 8, title: 'Oxygen', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 9, title: 'Fluorine', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 10, title: 'Neon', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 11, title: 'Sodium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 12, title: 'Magnesium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 13, title: 'Aluminum', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 14, title: 'Silicon', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 15, title: 'Phosphorus', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 16, title: 'Sulfur', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 17, title: 'Chlorine', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 18, title: 'Argon', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 19, title: 'Potassium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
-  {id: 20, title: 'Calcium', user: 'a', status:'done', created_date:'1/1/2000', expired_date:'2/1/2000', file:'b'},
+  {id: 1, title: 'The Importance of Bio-tech', user: 'John', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 2, title: 'Travis Scott: New music of our time', user: 'Chase', status:'pending', created_date:'5/3/2021', expired_date:'19/3/2021', file:'b', review:'a'},
+  {id: 3, title: 'What is Bitcoin?', user: 'Elise', status:'pending', created_date:'3/3/2021', expired_date:'17/3/2021', file:'b', review:'a'},
+  {id: 4, title: 'A Trip to the Moon', user: 'Jay', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 5, title: 'The Grammy: A Fashion Statement', user: 'Aprxel', status:'pending', created_date:'5/3/2021', expired_date:'19/3/2021', file:'b', review:'a'},
+  {id: 6, title: 'Machine learning: A modern future', user: 'Mike', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 7, title: 'The Industries of Gaming', user: 'Peter', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 8, title: 'Partners in equality', user: 'Tony', status:'pending', created_date:'3/3/2021', expired_date:'17/3/2021', file:'b', review:'a'},
+  {id: 9, title: 'The Truth about Cryptocurrency', user: 'Charlie', status:'pending', created_date:'3/3/2021', expired_date:'17/3/2021', file:'b', review:'a'},
+  {id: 10, title: 'The Power of Personality', user: 'May', status:'pending', created_date:'5/3/2021', expired_date:'19/3/2021', file:'b', review:'a'},
+  {id: 11, title: 'A World Leader in Converting Technologies', user: 'Ethan', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 12, title: 'Copyright Infringement', user: 'Harry', status:'pending', created_date:'5/3/2021', expired_date:'19/3/2021', file:'b', review:'a'},
+  {id: 13, title: 'Why bat viruses are dangerous', user: 'Simon', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 14, title: 'On Business Model Innovation', user: 'Felix', status:'pending', created_date:'3/3/2021', expired_date:'17/3/2021', file:'b', review:'a'},
+  {id: 15, title: 'Remote Learning Isn’t Just for Kids', user: 'Liz', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 16, title: 'Face Foward', user: 'Stacy', status:'pending', created_date:'5/3/2021', expired_date:'19/3/2021', file:'b', review:'a'},
+  {id: 17, title: 'Architectire on edge', user: 'Ted', status:'pending', created_date:'3/3/2021', expired_date:'17/3/2021', file:'b', review:'a'},
+  {id: 18, title: 'A.I Analytics', user: 'Don', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
+  {id: 19, title: 'How COVID-19 affect the film industry', user: 'Kylie', status:'pending', created_date:'5/3/2021', expired_date:'19/3/2021', file:'b', review:'a'},
+  {id: 20, title: 'Science and Culture', user: 'Tobi', status:'pending', created_date:'10/3/2021', expired_date:'24/3/2021', file:'b', review:'a'},
 ];
 
 /**

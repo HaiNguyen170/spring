@@ -25,4 +25,10 @@ export class UserService {
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
+
+  updateById(id,payload)
+ {
+    let url = `http://localhost/repos/Sportaz-repo/VaamozWeb/VaamozBusiness/RestApi/VaamozStore/AdminStore/angular_admin/php/index.php?id=${id}`
+    return this.http.put(url, payload);
+ }
 }

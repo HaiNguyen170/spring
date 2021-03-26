@@ -16,7 +16,7 @@ export class MagTableComponent implements AfterViewInit {
   dataSource: MagTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'title','student', 'status', 'created_date', 'expired_date', 'file'];
+  displayedColumns = ['id', 'title','student', 'status', 'created_date', 'expired_date', 'file', 'review'];
 
   constructor() {
     this.dataSource = new MagTableDataSource();
@@ -27,4 +27,5 @@ export class MagTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+  
 }

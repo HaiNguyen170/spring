@@ -14,6 +14,7 @@ import { ErrorComponent } from './error/error.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
 import { DataTableComponent } from './data-table/data-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MagTableComponent } from './mag-table/mag-table.component';
@@ -44,6 +45,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     ChartsModule,
     FormsModule

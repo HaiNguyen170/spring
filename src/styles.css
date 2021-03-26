@@ -449,7 +449,7 @@ a.move-top span{
 /*-- media --*/ 
 @media only screen 
 and (min-device-width: 320px) 
-and (max-device-width: 683px)
+and (max-device-width: 745px)
 and (-webkit-min-device-pixel-ratio: 2)  {
 
     .menu-toggle{
@@ -457,9 +457,10 @@ and (-webkit-min-device-pixel-ratio: 2)  {
     }
 
     body{
-      width: 112%;
+      width: 130%;
     }
 }
+
 
 @media (min-width: 992px) {
   .masthead {

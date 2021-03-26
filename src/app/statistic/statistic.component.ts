@@ -24,13 +24,13 @@ export class StatisticComponent implements OnInit {
       },
     }
   };
-  public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
-  public pieChartData: number[] = [300, 500, 100 ,200];
+  public pieChartLabels: Label[] = [['I.T'], ['Science'], ['Business'],['Architecture'],['Social'], 'Music & Art'];
+  public pieChartData: number[] = [29, 12.9, 19.3, 9.6, 12.9, 16.1];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartColors = [
     {
-      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)', 'rgba(7, 5, 5, 0.411)'],
+      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)', 'rgba(238, 140, 28, 0.637)', 'rgba(238, 224, 28, 0.808)', 'rgba(28, 102, 238, 0.637)'],
     },
   ];
 
@@ -39,7 +39,7 @@ export class StatisticComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // events
+  // Pie Chart
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
@@ -48,21 +48,7 @@ export class StatisticComponent implements OnInit {
     console.log(event, active);
   }
 
-  changeLabels(): void {
-    const words = ['hen', 'variable', 'embryo', 'instal', 'pleasant', 'physical', 'bomber', 'army', 'add', 'film',
-      'conductor', 'comfortable', 'flourish', 'establish', 'circumstance', 'chimney', 'crack', 'hall', 'energy',
-      'treat', 'window', 'shareholder', 'division', 'disk', 'temptation', 'chord', 'left', 'hospital', 'beef',
-      'patrol', 'satisfied', 'academy', 'acceptance', 'ivory', 'aquarium', 'building', 'store', 'replace', 'language',
-      'redeem', 'honest', 'intention', 'silk', 'opera', 'sleep', 'innocent', 'ignore', 'suite', 'applaud', 'funny'];
-    const randomWord = () => words[Math.trunc(Math.random() * words.length)];
-    this.pieChartLabels = Array.apply(null, { length: 3 }).map(_ => randomWord());
-  }
 
-  addSlice(): void {
-    this.pieChartLabels.push(['Line 1', 'Line 2', 'Line 3']);
-    this.pieChartData.push(400);
-    this.pieChartColors[0].backgroundColor.push('rgba(196,79,244,0.3)');
-  }
 
   removeSlice(): void {
     this.pieChartLabels.pop();
@@ -74,21 +60,28 @@ export class StatisticComponent implements OnInit {
     this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
   }
 
+
+  //Bar chart
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
     scales: { xAxes: [{}], yAxes: [{}] },
   };
-  public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels: Label[] = ['Number of Contributions'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+    { data: [450], label: 'I.T' },
+    { data: [200], label: 'Science' },
+    { data: [300], label: 'Business' },
+    { data: [150], label: 'Architecture' },
+    { data: [200], label: 'Social' },
+    { data: [250], label: 'Music & Art' },
+    { data: [0], label: ''}
   ];
 
-  public randomize(): void {
+  public lineview(): void {
     this.barChartType = this.barChartType === 'bar' ? 'line' : 'bar';
   }
 } 

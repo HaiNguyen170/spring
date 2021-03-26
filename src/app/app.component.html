@@ -7,7 +7,7 @@
         <a class="nav-item nav-link text-white" (click)="goToPage('Error')">Upcoming Project</a>
     </div>
     
-    <div class="column pl-1" *ngIf="isLoggedIn" >
+    <div class="column pl-1" *ngIf="!isLoggedIn" >
         <a class="nav-item nav-link text-white" (click)="goToPage('Submit')">Submission</a>
         <a class="nav-item nav-link text-white" (click)="goToPage('Table')">Manage</a>
         <a class="nav-item nav-link text-white" (click)="goToPage('Mag-Table')">Grading</a>
