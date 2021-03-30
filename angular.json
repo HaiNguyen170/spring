@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
@@ -88,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -121,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "test8"
+  "defaultProject": "test8",
+  "cli": {
+    "analytics": "9b6b8a29-76c8-4ad1-8d2a-7aa43403f624"
+  }
 }

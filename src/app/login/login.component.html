@@ -1,54 +1,50 @@
 <div class="container-fluid">
-   <div class="row no-gutter">
-      <div class="col-md-8 col-lg-6">
-         <div class="login d-flex align-items-center py-5">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-9 col-lg-8 mx-auto">
-                     <h3 class="fs-2 fw-normal mb-4">Welcome!</h3>
-                     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
-                        novalidate>
-                        <div class="form-label-group">
-                           <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email"
-                              [(ngModel)]="form.email" #email="ngModel" required autofocus>
-                        </div>
-                        <div class="alert alert-danger" role="alert" *ngIf="email?.errors && f.submitted">
-                           Email is required!
-                        </div>
+    <div class="row no-gutter">
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                                <h3 class="fs-2 fw-normal mb-4">Welcome!</h3>
+                                <div class="form-label-group">
+                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" [(ngModel)]="form.email" #email="ngModel" required autofocus>
+                                </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="email?.errors && f.submitted">
+                                    Email is required!
+                                </div>
 
-                        <div class="form-label-group">
-                           <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                              name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
-                           <div class="alert alert-danger" role="alert" *ngIf="password?.errors && f.submitted">
-                              <div *ngIf="password.errors.required">Password is required</div>
-                              <div *ngIf="password.errors.minlength">
-                                 Password must be at least 6 characters
-                              </div>
-                           </div>
-                        </div>
+                                <div class="form-label-group">
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
+                                    <div class="alert alert-danger" role="alert" *ngIf="password?.errors && f.submitted">
+                                        <div *ngIf="password.errors.required">Password is required</div>
+                                        <div *ngIf="password.errors.minlength">
+                                            Password must be at least 6 characters
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <div class="custom-control custom-checkbox mb-3">
-                           <input type="checkbox" class="custom-control-input" id="customCheck1">
-                           <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold fs-6 mb-2" type="submit">Sign in</button>
+                                <div class="text-center">
+                                    <a class="small" href="">Forgot password?</a>
+                                </div>
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                                        Login failed: {{ errorMessage }}
+                                    </div>
+                                </div>
+                            </form>
+                            <h3 class="fs-2 fw-normal mb-4 ml-4" *ngIf="isLoggedIn">Login Successful !</h3>
                         </div>
-                        <button
-                           class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold fs-6 mb-2"
-                           type="submit">Sign in</button>
-                        <div class="text-center">
-                           <a class="small" href="">Forgot password?</a>
-                        </div>
-                        <div class="form-group">
-                           <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-                              Login failed: {{ errorMessage }}
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-                  <img class="img-fluid mx-auto mt-4" src="../../assets/img/FGW_logo_d.png" alt="Responsive image">
-               </div>
+                        <img class="img-fluid mx-auto mt-4" src="../../assets/img/FGW_logo_d.png" alt="Responsive image">
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-   </div>
+        </div>
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    </div>
 </div>

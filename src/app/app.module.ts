@@ -22,6 +22,7 @@ import { ChartsModule } from 'ng2-charts';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { FileComponent } from './file/file.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     DataTableComponent,
     MagTableComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    FileComponent
   ], 
   imports: [
     BrowserModule,

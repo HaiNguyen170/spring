@@ -12,8 +12,8 @@ export class AppComponent implements OnInit{
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
-  showModeratorBoard = false;
-  email?: string;
+
+  email: string;
 
   constructor(private router:Router, private tokenStorageService: TokenStorageService){}
   ngOnInit(): void {
@@ -24,8 +24,6 @@ export class AppComponent implements OnInit{
       this.roles = user.roles;
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
       this.email = user.email;
     }
   }
