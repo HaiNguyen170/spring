@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import {UserService} from 'src/app/service/user.service';
 
 // TODO: Replace this with your own data model type
 export interface DataTableItem {
@@ -44,24 +45,43 @@ const EXAMPLE_DATA: DataTableItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class DataTableDataSource extends DataSource<DataTableItem> {
-  data: DataTableItem[] = EXAMPLE_DATA;
+  data: DataTableItem[] =[];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
   filter: string;
 
-  constructor() {
+  constructor(private service :UserService) {
     super();
   }
 
+  async getUser() {
+    await this.service.getAllUser()
+      .subscribe(
+        datauser => {
+          console.log(datauser)
+        datauser.forEach(element => {
+          let dataItem : DataTableItem = {id:element.id, name: element.username, faculty:element.falcuty.name, address: element.address, phone:element.phonenumber, email:element.email};
+          console.log(dataItem); 
+         this.data.push(dataItem);
+        });
+          console.log(datauser);
+        },
+        err => {
+          console.log(err);
+        });
+  }
   /**
    * Connect this data source to the table. The table will only update when
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<DataTableItem[]> {
+    this.getUser();
+    console.log(this.data);
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
+      console.log("Hello");
       return merge(observableOf(this.data), this.paginator.page, this.sort.sortChange)
         .pipe(map(() => {
           return this.getPagedData(this.getSortedData([...this.data ]));
@@ -69,6 +89,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
     } else {
       throw Error('Please set the paginator and sort on the data source before connecting.');
     }
+    
   }
 
   /**

@@ -1,0 +1,66 @@
+<div class="container">
+    <br>
+    <h1 style="text-align: left;">Article Details</h1>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th scope="row">ID</th>
+                <td>{{currentArticle.id}}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Title</th>
+                <td>{{currentArticle.title}}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Created Date</th>
+                <td>{{currentArticle.created_date}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Expired Date</th>
+                <td>{{currentArticle.expired_date}}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Creator</th>
+                <td>{{currentArticle.user.username}}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Falcuty</th>
+                <td>{{currentArticle.falcuty.name}}</td>
+            </tr>
+            <tr>
+                <th scope="row">File Upload</th>
+                <td>
+                    <div *ngIf="currentFile" class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+                            {{ progress }}%
+                        </div>
+                    </div>
+
+                    <label class="btn btn-default">
+                        <input type="file" (change)="selectFile($event)" />
+                      </label>
+
+                    <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+                        Upload
+                      </button>
+
+                    <div class="alert alert-light" role="alert">{{ message }}</div>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <h1 style="text-align: left;">List Uploaded File</h1>
+    <table class="table table-bordered">
+        <tbody>
+            <tr *ngFor="let file of fileInfos | async">
+                <td> <a href="{{ file.url }}">{{ file.name }}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

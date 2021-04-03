@@ -1,0 +1,25 @@
+<div class="fluid-container">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phonenumber</th>
+                <th scope="col">Falcuty</th>
+            </tr>
+            <tr *ngFor="let user of userData">
+                <th scope="row"><br>{{user.id}}</th>
+                <td><br>{{user.username}}</td>
+                <td><br>{{user.email}}</td>
+                <td><br>{{user.address}}</td>
+                <td><br>{{user.phonenumber}}</td>
+                <td><br>{{user.falcuty.name}}</td>
+                <td>
+                    <button class="btn btn-success " routerLink="/User-Detail/{{user.id}}" value="Update " style="height: 42px;width: 80px; ">Update</button> &nbsp;
+                    <button class="btn btn-danger " (click)="deleteUser(user.id)"  value="Delete " style="height: 42px;width: 80px; ">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

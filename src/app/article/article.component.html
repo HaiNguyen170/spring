@@ -1,0 +1,31 @@
+<div class="fluid-container">
+    
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Created</th>
+                <th scope="col">Expired</th>
+                <th scope="col">Status</th>
+                <th scope="col">Creator</th>
+                <th scope="col">Falcuty</th>
+                <th scope="col">Upload</th>
+            </tr>
+            <tr *ngFor="let article of articles">
+                <th scope="row"><br>{{article.id}}</th>
+                <td><br>{{article.title}}</td>
+                <td><br>{{article.created_date}}</td>
+                <td><br>{{article.expired_date}}</td>
+                <td><br><span class="badge badge-success" *ngIf="article.active">active</span>
+                    <span class="badge badge-danger" *ngIf="!article.active">expired</span></td>
+                <td><br>{{article.user.username}}</td>
+                <td><br>{{article.falcuty.name}}</td>
+                <td>
+                    <input class="btn btn-info" routerLink="/Article-Detail/{{article.id}}" type=" reset " value="File " style="height: 42px;width: 80px; "> &nbsp;
+                    <input class="btn btn-success " type="reset " value="Update " style="height: 42px;width: 80px; "> &nbsp;
+                    <input class="btn btn-danger " type="reset " value="Delete " style="height: 42px;width: 80px; "></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

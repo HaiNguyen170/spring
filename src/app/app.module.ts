@@ -23,6 +23,14 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { FileComponent } from './file/file.component';
+import { ArticleComponent } from './article/article.component';
+import { AricleDetailComponent } from './aricle-detail/aricle-detail.component';
+import { UserComponent } from './user/user.component';
+import {ToastModule} from 'ng-uikit-pro-standard';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ArticleCreateComponent } from './article-create/article-create.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -36,7 +44,12 @@ import { FileComponent } from './file/file.component';
     MagTableComponent,
     RegisterComponent,
     ProfileComponent,
-    FileComponent
+    FileComponent,
+    ArticleComponent,
+    AricleDetailComponent,
+    UserComponent,
+    UserDetailComponent,
+    ArticleCreateComponent
   ], 
   imports: [
     BrowserModule,
@@ -45,12 +58,15 @@ import { FileComponent } from './file/file.component';
     HttpClientModule,
     AngularFileUploaderModule,
     MatTableModule,
+    MatFormFieldModule,
     MatPaginatorModule,
+    MatDatepickerModule,
     MatSortModule,
     MatButtonModule,
     BrowserAnimationsModule,
     ChartsModule,
-    FormsModule
+    FormsModule,
+    ToastModule.forRoot()
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

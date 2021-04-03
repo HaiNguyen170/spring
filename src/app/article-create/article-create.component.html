@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="login d-flex align-items-center py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-lg-8 mx-auto">
+                        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                            <div class="form-label-group">
+                                <label for="name">Title</label>
+                                <input type="text" class="form-control" name="name" [(ngModel)]="form.title" required minlength="10" maxlength="100" #name="ngModel" />
+                                <div class="alert-danger" *ngIf="name?.errors && f.submitted">
+                                    <div *ngIf="name.errors.required">Title is required</div>
+                                    <div *ngIf="name.errors.minlength">
+                                        Requires 10 characters minimum
+                                    </div>
+                                    <div *ngIf="name.errors.maxlength">
+                                        Maximum of 100 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-label-group">
+                                <label for="email">Expired Date{{tomorrow}}</label>
+                                <input type="date" class="form-control" name="expired_date" [(ngModel)]="form.expired_date" required  #expired_date="ngModel"  min="{{tomorrow}}" />
+                            </div>
+
+                            <br>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block btn-sign">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

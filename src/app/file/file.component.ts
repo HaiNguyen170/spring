@@ -29,7 +29,7 @@ export class FileComponent implements OnInit {
   upload() {
     this.progress = 0;
     this.currentFile = this.selectedFiles.item(0);
-    this.uploadService.upload(this.currentFile).subscribe(
+    this.uploadService.upload(this.currentFile,1,1).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {
           this.progress = Math.round(100 * event.loaded / event.total);

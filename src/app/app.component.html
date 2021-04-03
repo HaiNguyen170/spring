@@ -8,8 +8,11 @@
 
         <div class="column pl-1" *ngIf="isLoggedIn">
             <a class="nav-item nav-link text-white" (click)="goToPage('Uploadfile')">Upload</a>
-            <a class="nav-item nav-link text-white" (click)="goToPage('Table')" *ngIf="showAdminBoard">Manage</a>
+            <a class="nav-item nav-link text-white" (click)="goToPage('Table')" *ngIf="showAdminBoard">User</a>
+            <a class="nav-item nav-link text-white" (click)="goToPage('Article')" >Articles</a>
+            <a class="nav-item nav-link text-white" (click)="goToPage('Article-Create')" *ngIf="true">Create Article</a>
             <a class="nav-item nav-link text-white" (click)="goToPage('Mag-Table')">Grading</a>
+            <a class="nav-item nav-link text-white" (click)="goToPage('User')">User</a>
             <a class="nav-item nav-link text-white" (click)="goToPage('Statistic')">Statistic</a>
             <a class="nav-item nav-link text-white" (click)="goToPage('Profile')">Profile</a>
             <a href class="nav-item nav-link text-white" (click)="logout()">LogOut</a>
